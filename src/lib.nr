@@ -63,7 +63,7 @@ fn test_merkle_tree_checker() {
     let path_elements: [Field] = [2];
     let path_indices: [Field] = [0];
     let result = merkle_tree_checker(leaf, root, path_elements, path_indices);
-    assert(result == true);
+    assert(result == true, "Merkle proof verification failed");
 
     // Test case 2: Invalid Merkle proof
     let invalid_root = 0;
@@ -71,10 +71,10 @@ fn test_merkle_tree_checker() {
     assert(invalid_result == false);
 
     // Test case 3: Another valid Merkle proof with different path
-    // let leaf2 = 3;
-    // let root2 = hash_left_right(3, 4);
-    // let path_elements2: [Field] = [4];
-    // let path_indices2: [Field] = [1];
-    // let result2 = merkle_tree_checker(leaf2, root2, path_elements2, path_indices2);
-    // assert(result2 == true);
+    let leaf2 = 3;
+    let root2 = hash_left_right(4, 3);
+    let path_elements2: [Field] = [4];
+    let path_indices2: [Field] = [1];
+    let result2 = merkle_tree_checker(leaf2, root2, path_elements2, path_indices2);
+    assert(result2 == true, "Merkle proof verification failed");
 }

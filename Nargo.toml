@@ -1,0 +1,8 @@
+[package]
+name = "merkle_tree_checker_mimc"
+type = "lib"
+authors = ["@mw2000"]
+compiler_version = ">=0.33.0"
+
+[dependencies]
+mimc_sponge = { git = "https://github.com/mw2000/mimc_sponge_noir", tag = "v0.0.1" }
